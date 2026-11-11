@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Multi Step Register Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="container">
+        <div class="card">
+            <!-- Step 1: Personal information -->
+            <section class="step active" id="step1">
+                <h2>Register</h2>
+                <form id="registrationForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your name"
+                               autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="example@gmail.com"
+                               autocomplete="email" required>
+                    </div>
+
+                    <button type="button" class="continue-btn" id="continue1">
+                        Continue
+                    </button>
+                </form>
+            </section>
+
+            <!-- Step 2: Topic selection -->
+            <section class="step" id="step2">
+                <h2>Which topics are you interested in?</h2>
+                <div class="topics" aria-label="Choose one or more topics">
+                    <button type="button" class="topic" aria-pressed="false">
+                        Software Development
+                    </button>
+                    <button type="button" class="topic" aria-pressed="false">
+                        User Experience
+                    </button>
+                    <button type="button" class="topic" aria-pressed="false">
+                        Graphic Design
+                    </button>
+                </div>
+
+                <button type="button" class="continue-btn" id="continue2">
+                    Continue
+                </button>
+                <button type="button" class="back-btn" id="back2">
+                    Go Back
+                </button>
+            </section>
+
+            <!-- Step 3: Summary -->
+            <section class="step" id="step3">
+                <h2>Summary</h2>
+                <div class="summary">
+                    <p><strong>Name:</strong> <span id="summaryName"></span></p>
+                    <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+                    <p class="summary-heading">Topics selected:</p>
+                    <ul id="summaryTopics"></ul>
+                </div>
+
+                <button type="button" class="continue-btn" id="submitBtn">
+                    Confirm
+                </button>
+                <button type="button" class="back-btn" id="back3">
+                    Go Back
+                </button>
+            </section>
+
+            <!-- Completion message -->
+            <section class="step" id="success" aria-live="polite">
+                <h2>Congratulations!</h2>
+                <p>Your registration has been successfully completed.</p>
+            </section>
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+            <p id="stepText">Step 1 of 3</p>
+            <div class="progress-dots" aria-label="Registration progress">
+                <span class="dot active-dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </main>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #121826;
+    color: #e5e7eb;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 24px;
+}
+
+/* Decorative purple glow. Keep blur-radial.png beside this CSS file
+   or update the path below to match your asset folder. */
+.container::before {
+    content: "";
+    position: absolute;
+    width: min(650px, 100vw);
+    aspect-ratio: 1;
+    background-image: url("multistep-register-form-master/multistep-register-form-master/resources/blur-radial.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    min-height: 300px;
+    padding: 32px;
+    background-color: #212936;
+    border: 1px solid #394150;
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    margin-bottom: 32px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #a1a1aa;
+    font-size: 13px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    color: #fff;
+    background-color: #212936;
+    border: 1px solid #4d5562;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #6b7280;
+}
+
+input:focus {
+    border-color: #845eee;
+    box-shadow: 0 0 0 2px #845eee33;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.continue-btn {
+    display: block;
+    width: 150px;
+    margin: 32px auto 0;
+    padding: 14px 20px;
+    color: #fff;
+    background-color: #845eee;
+    border: 0;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.continue-btn:hover {
+    background-color: #6d4bc3;
+}
+
+.back-btn {
+    display: block;
+    margin: 16px auto 0;
+    padding: 8px 20px;
+    color: #a1a1aa;
+    background: transparent;
+    border: 0;
+    font-size: 13px;
+}
+
+.back-btn:hover {
+    color: #fff;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.topics {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.topic {
+    width: 100%;
+    padding: 16px;
+    text-align: left;
+    color: #a1a1aa;
+    background-color: #394150;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.topic:hover {
+    border-color: #845eee;
+}
+
+.topic.selected {
+    color: #fff;
+    background-color: #845eee;
+    border-color: #a78bfa;
+}
+
+.summary {
+    color: #a1a1aa;
+    font-size: 14px;
+    line-height: 2;
+    overflow-wrap: anywhere;
+}
+
+.summary strong {
+    color: #fff;
+}
+
+.summary-heading {
+    margin-top: 15px;
+    color: #fff;
+}
+
+#summaryTopics {
+    padding-left: 22px;
+    color: #a1a1aa;
+}
+
+.progress-container {
+    position: relative;
+    z-index: 1;
+    margin-top: 32px;
+    text-align: center;
+}
+
+#stepText {
+    margin-bottom: 14px;
+    color: #a1a1aa;
+    font-size: 12px;
+}
+
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #394150;
+    border-radius: 50%;
+}
+
+.dot.active-dot {
+    background-color: #845eee;
+    outline: 4px solid #845eee33;
+}
+
+@media (max-width: 500px) {
+    .card {
+        padding: 24px;
+    }
+}

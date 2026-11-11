@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+}
+body {
+    font-family: "Kanit", sans-serif;
+    color: #ECEDF0;
+}
+main{
+    width: 100%;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #404A65;
+}
+h1{
+    font-size: 4rem;
+    font-weight: 600;
+    padding-top: 40px;
+
+    text-shadow: 2px 2px 0px #35383f;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #35383f;
+
+}
+.para{
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 60px;
+}
+.shadow{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.coin-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#coin {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+#result{
+    padding-bottom: 60px;
+}
+.random{
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #1F6FB0;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    color: #ECEDF0;
+
+    box-shadow: 0px 4px 0px 0px #23649b;
+}
